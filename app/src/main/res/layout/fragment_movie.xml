@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="258dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="231dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="90dp"
+        android:text="Spider man (1978)"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="61dp"
+        android:text="Released date"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <TextView
+        android:id="@+id/directorsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Directed by"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+    <TextView
+        android:id="@+id/actorsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Actors"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorsLabel" />
+
+    <TextView
+        android:id="@+id/genresLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Genre"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actorsLabel" />
+
+    <TextView
+        android:id="@+id/plotLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="116dp"
+        android:text="Plot"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/plotTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genresLabel" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="230dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:text="23 Jun 1989"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addMovieButton" />
+
+    <TextView
+        android:id="@+id/directorsTextView"
+        android:layout_width="230dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tim Burton"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+    <TextView
+        android:id="@+id/actorsTextView"
+        android:layout_width="230dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:text="Michael Keaton, Jack Nicholson, Kim Basinger, Robert Wuhl"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorsTextView" />
+
+    <TextView
+        android:id="@+id/genresTextView"
+        android:layout_width="230dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:text="Action, Adventure"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actorsTextView" />
+
+    <TextView
+        android:id="@+id/plotTextView"
+        android:layout_width="230dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:text="The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genresTextView"
+        app:layout_constraintVertical_bias="0.129" />
+
+    <Button
+        android:id="@+id/addMovieButton"
+        android:layout_width="187dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="133dp"
+        android:text="Add to Collection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
