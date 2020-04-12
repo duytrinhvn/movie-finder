@@ -2,26 +2,25 @@ package ca.mohawk.jefftrinh;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.concurrent.ExecutionException;
-
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-
+/**
+ * The dialog popups when the "Add to Collection" button is clicked
+ *
+ * @author Khac Duy Trinh
+ */
 public class DialogFragment extends AppCompatDialogFragment implements View.OnClickListener {
     TextInputEditText noteEditText;
     Button cancelButton;

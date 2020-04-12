@@ -9,10 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,17 +17,27 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import ca.mohawk.jefftrinh.R;
 import ca.mohawk.jefftrinh.ui.home.movie_info.MovieInfoFragment;
 
+/**
+ * Implementation of Home screen
+ * This is the parent fragment of MovieInfoFragment
+ *
+ * @author Khac Duy Trinh
+ */
 public class HomeFragment extends Fragment implements View.OnClickListener {
     EditText titleEditText;
     EditText yearEditText;
     Button searchButton;
     String API_KEY = "d7c5b659&";
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView ( @NonNull LayoutInflater inflater ,
+                               ViewGroup container , Bundle savedInstanceState ) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         titleEditText = root.findViewById(R.id.titleEditText);
@@ -149,12 +155,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 //Set our result equal to our stringBuilder
                 result = stringBuilder.toString();
 
-            }
-            catch(IOException e){
+            } catch ( IOException e ) {
                 e.printStackTrace();
                 result = null;
-            }
-            catch(Exception e){
+            } catch ( Exception e ) {
                 e.printStackTrace();
                 Log.d("Connection error ", e.getMessage());
                 result = null;
@@ -163,7 +167,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             return result;
         }
 
-        protected void onPostExecute(String result){
+        protected void onPostExecute( String result){
             super.onPostExecute(result);
 //            if (result != null) {
 //                Log.d("Movie content ", result);

@@ -4,6 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * DatabaseHelper class
+ * to create Movie Finder SQLite database when the app runs for the first time
+ * to delete Movie Finder SQLite database when the app deleted
+ *
+ * @author Khac Duy Trinh
+ */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Table Name

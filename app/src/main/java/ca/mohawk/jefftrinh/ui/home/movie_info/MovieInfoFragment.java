@@ -3,11 +3,8 @@ package ca.mohawk.jefftrinh.ui.home.movie_info;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +15,6 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 import androidx.annotation.NonNull;
@@ -29,6 +23,12 @@ import ca.mohawk.jefftrinh.DialogFragment;
 import ca.mohawk.jefftrinh.DownloadImageTask;
 import ca.mohawk.jefftrinh.R;
 
+/**
+ * Implementation of Movie Info section in Home screen
+ * This is the child fragment of HomeFragment
+ *
+ * @author Khac Duy Trinh
+ */
 public class MovieInfoFragment extends Fragment implements View.OnClickListener {
     JSONObject movieInfoJson;
     ImageView moviePoster;
@@ -47,8 +47,8 @@ public class MovieInfoFragment extends Fragment implements View.OnClickListener 
     String posterUrl;
     String note;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView ( @NonNull LayoutInflater inflater ,
+                               ViewGroup container , Bundle savedInstanceState ) {
         root = inflater.inflate(R.layout.fragment_movie, container, false);
         c = getActivity();
 
@@ -63,7 +63,7 @@ public class MovieInfoFragment extends Fragment implements View.OnClickListener 
 
         plotTextView.setMovementMethod(new ScrollingMovementMethod ());
 
-        addMovieButton.setOnClickListener((View.OnClickListener) this);
+        addMovieButton.setOnClickListener ( this );
 
         // Read -Restore data from preferences
         SharedPreferences settings = getActivity().getPreferences(0);
@@ -90,8 +90,7 @@ public class MovieInfoFragment extends Fragment implements View.OnClickListener 
             plotTextView.setText(plot);
             Bitmap posterBitmap = new DownloadImageTask().execute(posterUrl).get();
             moviePoster.setImageBitmap(posterBitmap);
-        }
-        catch (JSONException e) {
+        } catch ( JSONException e ) {
             e.printStackTrace();
         } catch ( InterruptedException e ) {
             e.printStackTrace ( );
@@ -103,7 +102,7 @@ public class MovieInfoFragment extends Fragment implements View.OnClickListener 
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick( View v) {
         DialogFragment dialogFragment = new DialogFragment();
         dialogFragment.show(getParentFragmentManager(), "dialog");
 //        Toast.makeText(c, "Movie was added to the Collection" , Toast.LENGTH_LONG).show();
